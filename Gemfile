@@ -64,9 +64,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
+#bootstrap4追加
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.9.9'
 gem 'ransack'
 gem 'kaminari'
 gem 'pry-byebug'
+gem 'rubocop-airbnb'
