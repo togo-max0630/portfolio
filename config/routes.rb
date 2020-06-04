@@ -5,12 +5,14 @@ Rails.application.routes.draw do
     collection do
       get 'quit'
       patch 'out'
-        resources :rerationships
-          member do 
-            post 'follow'
-            post 'unfollow'
-          end
-        resources :category
+    end
+    resources :rerationships
+      member do 
+        post 'follow'
+        post 'unfollow'
+      end
+    resources :category
+    
   end
 
   resources :posts do
