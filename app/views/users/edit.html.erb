@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+
+<div class="field">
+  <%= f.label :"プロフィール画像" %>
+  <%= f.attachment_field :profile_image, class: "user_image" %>
+</div>
+
+<div class="field">
+  <%= f.label :"名前" %>
+  <%= f.text_field :name, class: "name" %>
+</div>
+
+<div class="field">
+  <%= f.label :"ニックネーム" %>
+  <%= f.text_field :nickname, class: "nickname" %>
+</div>
+
+<div class="field">
+  <%= f.label :"郵便番号" %>
+  <%= f.text_field :postal_code, class: "postal_code" %>
+</div>
+
+<div class="field">
+  <%= f.label :"住所" %>
+  <%= f.text_field :residence, class: "residence" %>
+</div>
+
+
+
+
+
+<div class="field">
+  <%= f.label :"自己紹介" %>
+  <%= f.text_area :introduction, class: "introduction" %>
+</div>
+
+<% end %>
+
+
+
+
