@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :residence
       t.string :profile_image_id
       t.text :introduction
-      t.boolean :is_valid, null: false
+      # t.boolean :is_valid, null: false
 
       t.timestamps null: false
     end
