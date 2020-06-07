@@ -6,12 +6,9 @@ Rails.application.routes.draw do
       get 'quit'
       patch 'out'
     end
-    resources :rerationships
-      member do 
-        post 'follow'
-        post 'unfollow'
-      end    
   end
+  post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
+  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
 
   resources :posts do
     resource :likes, only:[:create, :destroy]

@@ -24,7 +24,13 @@
             <%= user.introduction %>
           </td>
           <td>
-            <%= render ‘relationships/follow’, user: @user %>
+            <% if user.id != current_user.id %>
+            <% if current_user.following?(user) %>
+              <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+            <% else %>
+              <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+            <% end %>
+            <% end %>
           </td>
         </tr>
         <% end %>
