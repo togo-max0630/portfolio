@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
   
   def index
-    @category = Category.all
+    @category = Category.new
+    @categories = Category.all
   end
 
   def show
@@ -11,9 +12,22 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    @category = Category.new
+    if @category.save
+      redirect_to categories_path
+    else
+      @categories = Category.all
+      render 'index'
+    end
   end
 
   def update
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name)
   end
 
 end

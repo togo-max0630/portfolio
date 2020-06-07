@@ -7,6 +7,4 @@ class User < ApplicationRecord
   attachment :profile_image, destroy: false
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  # belongs_to :category
-  # belongs_to :subcategory
 end

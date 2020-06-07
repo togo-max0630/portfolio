@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_042504) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "category_id"
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -69,8 +70,8 @@ ActiveRecord::Schema.define(version: 2020_06_04_042504) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "category"
-    t.integer "sub_category"
+    t.integer "category", default: 0
+    t.integer "sub_category", default: 0
     t.string "name"
     t.string "nickname"
     t.string "postal_code"

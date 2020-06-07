@@ -15,6 +15,12 @@
         <%= @user.introduction %>
       </th>
     </tr>
+    <tr>
+      <th></th>
+      <th>
+        <%= link_to "Edit", edit_user_path(@user.id) %>
+      </th>
+    </tr>
   </table>
 </div>
 

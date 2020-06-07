@@ -18,13 +18,15 @@
   )
 end
 
-20.times do |n|
-  Post.create!(
-    title: "test#{n + 1}",
-    body: "ぴえんぴえんぴえんぴえん#{n + 1}",
-    user_id: n + 1
-  )
-end
+# 20.times do |n|
+#   Post.create!(
+#     title: "test#{n + 1}",
+#     body: "ぴえんぴえんぴえんぴえん#{n + 1}",
+#     user_id: n + 1
+#     # category_id: n + 1,
+#     # sub_category_id: n + 1
+#   )
+# end
 
 # 　Category.create!(
 #     name: "メーカー"

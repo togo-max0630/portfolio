@@ -10,14 +10,14 @@ Rails.application.routes.draw do
       member do 
         post 'follow'
         post 'unfollow'
-      end
-    resources :category
-    
+      end    
   end
 
   resources :posts do
     resource :likes, only:[:create, :destroy]
     resources :comments, only:[:create, :destroy]
   end
+  
+  resources :categories
 
 end

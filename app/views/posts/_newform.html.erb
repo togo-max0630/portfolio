@@ -8,7 +8,12 @@
     <%= f.label :"投稿内容" %>
     <%= f.text_area :body, class: "body" %>
   </div>
+  <div class="form-group">
+  　 <%= f.label :"業界", class: "category" %>
+  　 <%= f.collection_select(:category_id, @categories, :id, :name, prompt: "-- 選択してください --") %>
+  </div>
   <div class="actions row">
     <%= f.submit class: "btn btn-primary" %>
   </div>
+
 <% end %>
