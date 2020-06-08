@@ -1,17 +1,26 @@
 <!-- 新規投稿 -->
 <%= form_for(@post) do |f| %>
-  <div class="field row">
-    <%= f.label :"タイトル" %>
-    <%= f.text_field :title, class: "title" %>
-  </div>
-  <div class="field row">
-    <%= f.label :"投稿内容" %>
-    <%= f.text_area :body, class: "body" %>
-  </div>
+
   <div class="form-group">
   　 <%= f.label :"業界", class: "category" %>
   　 <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "-- 選択してください --") %>
   </div>
+
+  <div class="form-group">
+  　 <%= f.label :"職種", class: "sub_category" %>
+  　 <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :name, prompt: "-- 選択してください --") %>
+  </div>
+
+  <div class="field row">
+    <%= f.label :"タイトル" %>
+    <%= f.text_field :title, class: "title" %>
+  </div>
+
+  <div class="field row">
+    <%= f.label :"投稿内容" %>
+    <%= f.text_area :body, class: "body" %>
+  </div>
+  
   <div class="actions row">
     <%= f.submit class: "btn btn-primary" %>
   </div>

@@ -5,12 +5,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def create
     @category = Category.new(category_params)
     if @category.save
@@ -21,7 +15,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def update
+  def destroy
   end
 
   private
