@@ -18,7 +18,7 @@
   )
 end
 
-# 5.times do |n|
+# 8.times do |n|
 #   Post.create!(
 #     title: "test#{n + 1}",
 #     body: "ぴえんぴえんぴえんぴえん#{n + 1}",
@@ -28,86 +28,86 @@ end
 #   )
 # end
 
-# 　Category.create!(
-#     name: "メーカー"
-#   )
+  Category.create!(
+    name: "メーカー"
+  )
   
-#   Category.create!(
-#     name: "小売"
-#   )
+  Category.create!(
+    name: "小売"
+  )
 
-# 　Category.create!(
-#     name: "サービス"
-#   )
+  Category.create!(
+    name: "サービス"
+  )
   
-#   Category.create!(
-#     name: "ソフトウェア・通信"
-#   )
+  Category.create!(
+    name: "ソフトウェア・通信"
+  )
 
-# 　Category.create!(
-#     name: "商社"
-#   )
+  Category.create!(
+    name: "商社"
+  )
 
-# 　Category.create!(
-#     name: "金融"
-#   )
+  Category.create!(
+    name: "金融"
+  )
 
-# 　Category.create!(
-#     name: "マスコミ"
-#   )
+  Category.create!(
+    name: "マスコミ"
+  )
 
-# 　Category.create!(
-#     name: "官公庁・公社・団体"
-#   )
-# 　
-# 　SubCategory.create!(
-#     name: "営業"
-#   )
+  Category.create!(
+    name: "官公庁・公社・団体"
+  )
 
-#   SubCategory.create!(
-#     name: "コンサルタント"
-#   )
+  SubCategory.create!(
+    name: "営業"
+  )
 
-#   SubCategory.create!(
-#     name: "事務"
-#   )
+  SubCategory.create!(
+    name: "コンサルタント"
+  )
 
-# 　SubCategory.create!(
-#     name: "経理"
-#   )
+  SubCategory.create!(
+    name: "事務"
+  )
 
-# 　SubCategory.create!(
-#     name: "人事"
-#   )
+  SubCategory.create!(
+    name: "経理"
+  )
 
-# 　SubCategory.create!(
-#     name: "マーケティング"
-#   )
+  SubCategory.create!(
+    name: "人事"
+  )
 
-# 　SubCategory.create!(
-#     name: "販売"
-#   )
+  SubCategory.create!(
+    name: "マーケティング"
+  )
 
-# 　SubCategory.create!(
-#     name: "飲食"
-#   )
+  SubCategory.create!(
+    name: "販売"
+  )
 
-# 　SubCategory.create!(
-#     name: "エンジニア"
-#   )
+  SubCategory.create!(
+    name: "飲食"
+  )
 
-# 　SubCategory.create!(
-#     name: "看護師"
-#   )
+  SubCategory.create!(
+    name: "エンジニア"
+  )
 
-# 　SubCategory.create!(
-#     name: "ドライバー"
-#   )
+  SubCategory.create!(
+    name: "看護師"
+  )
 
-# 　SubCategory.create!(
-#     name: "工場"
-#   )
+  SubCategory.create!(
+    name: "ドライバー"
+  )
 
-# 　SubCategory.create!(
-#     name: "デザイナー"
-#   )
+  SubCategory.create!(
+    name: "工場"
+  )
+
+  SubCategory.create!(
+    name: "デザイナー"
+  )
