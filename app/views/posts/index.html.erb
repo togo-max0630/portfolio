@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-    <%= @posts.each do |post| %>
+    <% @posts.each do |post| %>
     <tr>
       <td>
         <%= attachment_image_tag(post.user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %>

@@ -8,6 +8,13 @@
       <th>
         <%= @user.nickname %>
       </th>
+      <th>
+        <% if @user.id != current_user.id %>
+        <span id='follow-button_#{ user.id }'>
+        <%= render 'users/follow-button', user: @user %>
+        </span>
+        <% end %>
+      </th>
     </tr>
     <tr>
       <th>自己紹介</th>
@@ -16,7 +23,17 @@
       </th>
     </tr>
     <tr>
-      <th></th>
+      <th>フォロー</th>
+      <th><%= "#{@user.follower.count}" %>
+    </tr>
+    <tr>
+      <th>フォロワー</th>
+      <th><%= "#{@user.followed.count}" %>
+    </tr>
+    <tr>
+      <th>
+        <%= link_to "Back", users_path, class: "back" %>
+      </th>
       <th>
         <%= link_to "Edit", edit_user_path(@user.id) %>
       </th>

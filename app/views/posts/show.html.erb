@@ -1,12 +1,22 @@
 <div class="col-xs-9">
   <h2>投稿詳細</h2>
-  <div class="field">
-    <p>
-      タイトル                    <%= @post.title %>
-    </p>
-  </div>
-  <div class="field">
-    <p>
-      投稿内容                    <%= @post.body %>
-    </p>
-  </div>
+    <div class="field">
+      <p>
+        業界<%= @post.category.name %>
+      </p>
+    </div>
+    <div class="field">
+      <p>
+        職種<%= @post.sub_category.name %>
+      </p>
+    </div>
+    <div class="field">
+      <p>
+        タイトル<%= @post.title %>
+      </p>
+    </div>
+    <div class="field">
+      <p>
+        投稿内容<%= @post.body %>
+      </p>
+    </div>
