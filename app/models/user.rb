@@ -48,6 +48,9 @@ class User < ApplicationRecord
   #   self.followings.include?(other_user)
   # end
 
+  validates :name, :nickname, :residence, presence: true
+  validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
+
 
 
 end
