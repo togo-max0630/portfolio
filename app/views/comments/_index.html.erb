@@ -1,0 +1,22 @@
+<!-- 非同期通信 -->
+<%= comments.count %>件コメント
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+
+    <div class="field">
+      <%= attachment_image_tag(comment.user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %>
+    </div>
+
+    <div class="field">
+      <%= comment.user.name %>
+    </div>
+
+    <div class="comment-text">
+      <%= comment.content %>
+      <% if comment.user == current_user %>
+        <%= link_to "Destroy", post_comment_path(comment.post_id, comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "comment_destroy" %>
+      <% end %>
+    </div>
+
+  <% end %>
+<% end %>
