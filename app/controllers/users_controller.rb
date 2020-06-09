@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	def index
 		@user = current_user
     @q = User.ransack(params[:q])
-		@users = @q.result(distinct: true)
+		@users = @q.result(distinct: true).page(params[:page]).per(5)
 	end
 
 	def show
