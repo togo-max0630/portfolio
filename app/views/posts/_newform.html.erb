@@ -2,27 +2,27 @@
 <%= form_for(@post) do |f| %>
 
   <div class="form-group">
-  　 <%= f.label :"業界", class: "category" %>
-  　 <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "-- 選択してください --") %>
+  　 <%= f.label :"業界", class: "col-xs-7 control-label" %>
+  　 <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "-- 選択してください --", class: "col-xs-12") %>
   </div>
 
   <div class="form-group">
-  　 <%= f.label :"職種", class: "sub_category" %>
-  　 <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :name, prompt: "-- 選択してください --") %>
+  　 <%= f.label :"職種", class: "col-xs-7 control-label" %>
+  　 <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :name, prompt: "-- 選択してください --", class: "col-xs-12") %>
   </div>
 
-  <div class="field row">
-    <%= f.label :"タイトル" %>
-    <%= f.text_field :title, class: "title" %>
+  <div class="form-group">
+    <%= f.label :"タイトル", class: "col-xs-7 control-label" %>
+    <%= f.text_field :title, class: "col-xs-12 title" %>
   </div>
 
-  <div class="field row">
-    <%= f.label :"投稿内容" %>
-    <%= f.text_area :body, class: "body" %>
+  <div class="form-group">
+    <%= f.label :"投稿内容", class: "col-xs-7 control-label" %>
+    <%= f.text_area :body, class: "col-xs-12 body" %>
   </div>
   
-  <div class="actions row">
-    <%= f.submit class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.submit "投稿する", class: "col-xs-6 btn btn-primary pull-right" %>
   </div>
 
 <% end %>
