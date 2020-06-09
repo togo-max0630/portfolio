@@ -5,5 +5,5 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  # validates :category_id, :sub_category_id, :title, :body, presence: true
+  validates :category_id, :sub_category_id, :title, :body, presence: true
 end
