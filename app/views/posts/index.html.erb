@@ -10,7 +10,7 @@
 </div>
 <!-- 投稿一覧表示 -->
 <div class="col-xs-9">
-<h2>お悩み一覧</h2>
+<h3>お悩み一覧</h3><%= paginate @posts %>
 
 <table class="table table-hover table-inverse">
   <thead>
@@ -41,7 +41,6 @@
     <% end %>
   </tbody>
 </table>
-<%= paginate @posts %>
 </div>
 
 
