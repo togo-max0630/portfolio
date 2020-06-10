@@ -3,27 +3,28 @@
 <%= form_for(@post) do |f| %>
 
   <div class="form-group">
-  　 <%= f.label :"業界", class: "col-xs-1 control-label" %>
+  　 <%= f.label :"業界", class: "col-xs-2 control-label" %>
   　 <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "-- 選択してください --", class: "col-xs-12") %>
   </div>
 
   <div class="form-group">
-  　 <%= f.label :"職種", class: "col-xs-1 control-label" %>
+  　 <%= f.label :"職種", class: "col-xs-2 control-label" %>
   　 <%= f.collection_select(:sub_category_id, SubCategory.all, :id, :name, prompt: "-- 選択してください --", class: "col-xs-12") %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"タイトル", class: "col-xs-1 control-label" %>
+    <%= f.label :"タイトル", class: "col-xs-2 control-label" %>
     <%= f.text_field :title, class: "col-xs-12 title" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"投稿内容", class: "col-xs-1 control-label" %>
+    <%= f.label :"投稿内容", class: "col-xs-2 control-label" %>
     <%= f.text_area :body, class: "col-xs-12 body" %>
   </div>
   
   <div class="form-group">
-    <%= f.submit "変更する", class: "col-xs-2 btn btn-primary pull-right" %>
+    <%= f.submit "更新", class: "col-xs-2 btn btn-primary pull-right" %>
+    <%= link_to "戻る", posts_path, class: "back" %>
   </div>
 
 <% end %>

@@ -1,43 +1,49 @@
 <div class="col-xs-12">
+<h2 class="head-line title_h2 text-center">プロフィール編集</h2>
 <%= form_for(@user) do |f| %>
 
-<div class="field">
-  <%= f.label :"プロフィール画像" %>
-  <%= f.attachment_field :profile_image, class: "user_image" %>
+<div class="col-xs-10">
+<div class="form-group col-xs-12">
+  <%= attachment_image_tag(@user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %><br><br>
+  <%= f.label :profile_image,'プロフィール画像をアップロード', class: "btn btn-secondary rounded-pill col-sm-3" %>
+  <%= f.file_field :profile_image, style: "display:none;" %>
 </div>
 
-<div class="field">
-  <%= f.label :"名前" %>
-  <%= f.text_field :name, class: "name" %>
+<div class="form-group col-xs-12">
+  <%= f.label :"名前", class: "col-sm-3" %>
+  <%= f.text_field :name, class: "name col-sm-3" %>
 </div>
 
-<div class="field">
-  <%= f.label :"ニックネーム" %>
-  <%= f.text_field :nickname, class: "nickname" %>
+<div class="form-group col-xs-12">
+  <%= f.label :"ニックネーム", class: "col-sm-3" %>
+  <%= f.text_field :nickname, class: "nickname col-sm-3" %>
 </div>
 
-<div class="field">
-  <%= f.label :"郵便番号" %>
-  <%= f.text_field :postal_code, class: "postal_code" %>
+<div class="form-group col-xs-12">
+  <%= f.label :"郵便番号", class: "col-sm-3" %>
+  <%= f.text_field :postal_code, class: "postal_code col-sm-3" %>
 </div>
 
-<div class="field">
-  <%= f.label :"住所" %>
-  <%= f.text_field :residence, class: "residence" %>
+<div class="form-group col-xs-12">
+  <%= f.label :"住所", class: "col-sm-3" %>
+  <%= f.text_field :residence, class: "residence col-sm-3" %>
 </div>
 
 
-<div class="field">
-  <%= f.label :"自己紹介" %>
-  <%= f.text_area :introduction, class: "introduction" %>
+<div class="form-group col-xs-12">
+  <%= f.label :"自己紹介", class: "col-sm-3" %>
+  <%= f.text_area :introduction, class: "introduction col-sm-7" %>
 </div>
 
-<div class="actions row">
-  <%= f.submit class: "btn btn-primary" %>
+<div class="actions col-xs-12">
+  <%= f.submit "更新", class: "btn btn-primary col-sm-1" %>
+  <%= link_to '退会', quit_users_path, class: "glyphicon glyphicon-tint btn btn-danger col-sm-1" %>
+  <%= link_to "戻る", users_path, class: "btn btn-primary col-sm-1" %>
 </div>
 
 <% end %>
 
+</div>
 </div>
 
 

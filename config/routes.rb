@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :sub_categories
-
+  
+  root 'homes#top'
+  get 'homes/about'
 end

@@ -20,6 +20,11 @@
         投稿内容<%= @post.body %>
       </p>
     </div>
+    <div class="field">
+        <%= link_to "編集", edit_post_path(@post.id) %>
+        <%= link_to "戻る", posts_path, class: "back" %>
+        <%= link_to "削除",@post, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
+    </div>
 </div>
 
 <div class="col-xs-5">

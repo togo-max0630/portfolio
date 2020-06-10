@@ -1,11 +1,11 @@
 <div class="col-xs-12">
 <h2>マイページ</h2>
-  <table class="table">
+  <table class="table table-bordered table-condensed">
     <tr>
         <%= attachment_image_tag(@user, :profile_image, size: "200x120", fallback: "4dbc7e0f.jpg") %>
     </tr>
     <tr>
-      <th>ニックネーム</th>
+      <th class="info col-xs-2">ニックネーム</th>
       <th>
         <%= @user.nickname %>
       </th>
@@ -33,10 +33,10 @@
     </tr>
     <tr>
       <th>
-        <%= link_to "Back", users_path, class: "back" %>
+        <%= link_to "戻る", users_path, class: "back" %>
       </th>
       <th>
-        <%= link_to "Edit", edit_user_path(@user.id) %>
+        <%= link_to "編集", edit_user_path(@user.id) %>
       </th>
     </tr>
   </table>
