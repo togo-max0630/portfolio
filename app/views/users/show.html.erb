@@ -2,8 +2,9 @@
 <h2>マイページ</h2>
   <table class="table">
     <tr>
-        <%= attachment_image_tag(@user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %>
+        <%= attachment_image_tag(@user, :profile_image, size: "200x120", fallback: "4dbc7e0f.jpg") %>
     </tr>
+    <tr>
       <th>ニックネーム</th>
       <th>
         <%= @user.nickname %>
