@@ -3,14 +3,29 @@
 </h1>
   <nav class="pc-nav">
     <ul>
-      <!-- if文でログイン時と通常時の違いを表示 -->        
+      <!-- if文でログイン時と通常時の違いを表示 -->  
+      <% if user_signed_in? %>   
+
+      <li>
+
+      </li>
       <li>
         <%= link_to '会員一覧', users_path, class: ''  %>
       </li>
       <li>
         <%= link_to 'お悩み一覧', posts_path, class: '' %>
+      </li>
+      <li>
+        <%= link_to 'チャット一覧', groups_path, class: '' %>
+      </li>
       <li>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: '' %>
+      </li>
+
+      <% else %>
+
+      <li>
+        <%= link_to 'お悩み一覧', posts_path, class: '' %>
       </li>
       <li>
         <%= link_to 'sign up', new_user_registration_path, class: '' %>
@@ -19,7 +34,12 @@
         <%= link_to 'login', new_user_session_path, class: '' %>
       </li>
       <li>
-        <%= link_to 'about', homes_about_path, class: '' %>
+        <%= link_to 'Home', root_path, class: '' %>
       </li>
+      <li>
+        <%= link_to 'About', homes_about_path, class: '' %>
+      </li>
+
+      <% end %>
     </ul>
   </nav>

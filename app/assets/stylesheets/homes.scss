@@ -1,3 +1,18 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ .top {
+  background-image: url(/assets/o0425028312613913455.jpg);
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  background-size: cover;
+}
+
+.sample {
+  margin-top: 80px;
+  color: #00FF7F  ;
+  font-size: 50px;
+  font-family: "arial black";
+  text-align: center;
+}
