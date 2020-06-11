@@ -1,0 +1,29 @@
+<div class="col-xs-3">
+   <%= render 'groups/newform', post: @post %>
+</div>
+<!-- グループ一覧 -->
+<div class="col-xs-9">
+<h3>チャットルーム</h3><%= paginate @groups %>
+
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag(group.user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %>
+      </td>
+      <td>
+        <%= link_to group.name, group_path(group.id) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

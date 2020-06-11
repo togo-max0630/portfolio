@@ -18,15 +18,77 @@
   )
 end
 
-# 8.times do |n|
-#   Post.create!(
-#     title: "test#{n + 1}",
-#     body: "ぴえんぴえんぴえんぴえん#{n + 1}",
-#     user_id: n + 1,
-#     category_id: n + 1,
-#     sub_category_id: n + 1
-#   )
-# end
+  # Post.create!(
+  #   title: "ストレス溜まる",
+  #   body: "ある会社で営業職をしています。上司と馬が会いません、やめるべきでしょうか",
+  #   category_id: 1,
+  #   sub_category_id: 1
+  # )
+
+  # Post.create!(
+  #   title: "幸せ",
+  #   body: "すごく幸せです。このまま続くか不安です。皆様もこんな会社に出会ったことありますか",
+  #   category_id: 1,
+  #   sub_category_id: 5
+  # )
+
+  # Post.create!(
+  #   title: "幸せ",
+  #   body: "すごく幸せです。このまま続くか不安です。皆様もこんな会社に出会ったことありますか",
+  #   category_id: 3,
+  #   sub_category_id: 6
+  # )
+
+  # Post.create!(
+  #   title: "幸せ",
+  #   body: "すごく幸せです。このまま続くか不安です。皆様もこんな会社に出会ったことありますか",
+  #   category_id: 8,
+  #   sub_category_id: 3
+  # )
+
+  # Post.create!(
+  #   title: "エンジニア不安",
+  #   body: "自分に合っているか不安です。皆様も最初はそうだったのでしょうか",
+  #   category_id: 4,
+  #   sub_category_id: 8
+  # )
+
+  # Post.create!(
+  #   title: "将来性",
+  #   body: "会社に将来性を感じません",
+  #   category_id: 1,
+  #   sub_category_id: 5
+  # )
+
+  # Post.create!(
+  #   title: "グループチャット機能について",
+  #   body: "グループチャット機能を実装する際以下のようにしました。",
+  #   category_id: 4,
+  #   sub_category_id: 8
+  # )
+
+  # Post.create!(
+  #   title: "将来性",
+  #   body: "会社に将来性を感じません",
+  #   category_id: 7,
+  #   sub_category_id: 3
+  # )
+
+  # Post.create!(
+  #   title: "将来性",
+  #   body: "会社に将来性を感じません",
+  #   category_id: 6,
+  #   sub_category_id: 2
+  # )
+
+  # Post.create!(
+  #   title: "人間関係のストレス",
+  #   body: "ここで解決が難しそうならグループ掲示板で話しましょう",
+  #   category_id: 3,
+  #   sub_category_id: 9
+  # )
+
+
 
   Category.create!(
     name: "メーカー"

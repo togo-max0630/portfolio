@@ -4,9 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
+  has_many :groups
   attachment :profile_image, destroy: false
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   has_many :follower, class_name: "Rerationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followed, class_name: "Rerationship", foreign_key: "followed_id", dependent: :destroy
@@ -47,9 +49,6 @@ class User < ApplicationRecord
   # def following?(other_user)
   #   self.followings.include?(other_user)
   # end
-
-  has_many :group_users
-  has_many :groups, through: :group_users
   
   validates :name, :nickname, :residence, presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }

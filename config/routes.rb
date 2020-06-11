@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users
-  root 'groups#index'
+
+  root 'homes#top'
+  get 'homes/about'
+
   resources :users do
     collection do
       get 'quit'
       patch 'out'
     end
   end
-  resources :groups, only: [:new, :create, :edit, :update]
   post 'follow/:id' => 'rerationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'rerationships#unfollow', as: 'unfollow' # フォロー外す
   get 'users/following/:user_id', to: 'users#following', as:'users_following'
@@ -17,11 +19,13 @@ Rails.application.routes.draw do
   resources :posts do
     resource :likes, only:[:create, :destroy]
     resources :comments, only:[:create, :destroy]
-  end
-  
+  end 
+
   resources :categories
   resources :sub_categories
+
+  resources :groups do
+    resources :messages, only:[:create, :destroy]
+  end
   
-  root 'homes#top'
-  get 'homes/about'
 end
