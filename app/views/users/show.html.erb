@@ -11,7 +11,7 @@
       </th>
       <th>
         <% if @user.id != current_user.id %>
-        <span id='follow-button_#{ user.id }'>
+        <span id='follow-button_<%= @user.id %>'>
         <%= render 'users/follow-button', user: @user %>
         </span>
         <% end %>
@@ -25,11 +25,11 @@
     </tr>
     <tr>
       <th>フォロー</th>
-      <th><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id) %>
+      <th id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id) %>
     </tr>
     <tr>
       <th>フォロワー</th>
-      <th><%= link_to "#{@user.followed.count}", users_follower_path(@user.id) %>
+      <th id= 'follower-count_<%= @user.id %>'><%= link_to "#{@user.followed.count}", users_follower_path(@user.id) %>
     </tr>
     <tr>
       <th>
