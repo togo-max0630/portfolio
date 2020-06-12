@@ -67,7 +67,7 @@ gem 'refile-mini_magick'
 #bootstrap4追加
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
-
+gem 'impressionist', '~>1.6.1'
 gem 'ransack'
 gem 'kaminari'
 gem 'pry-byebug'

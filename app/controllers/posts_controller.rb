@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		# アクセス数のカウント(同じ人が見た場合無効)
+
 		@comment = Comment.new
 		@comments = @post.comments.order(created_at: :desc)
 	end

@@ -25,11 +25,11 @@
     </tr>
     <tr>
       <th>フォロー</th>
-      <th><%= "#{@user.follower.count}" %>
+      <th><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id) %>
     </tr>
     <tr>
       <th>フォロワー</th>
-      <th><%= "#{@user.followed.count}" %>
+      <th><%= link_to "#{@user.followed.count}", users_follower_path(@user.id) %>
     </tr>
     <tr>
       <th>
