@@ -1,14 +1,12 @@
-<%= render "layouts/error_messages", resource: @user %>
-
 <div class="col-xs-12">
+<%= render "layouts/error_messages", resource: @user %>
 <h2 class="head-line title_h2 text-center">プロフィール編集</h2>
 <%= form_for(@user) do |f| %>
 
 <div class="col-xs-10">
 <div class="form-group col-xs-12">
   <%= attachment_image_tag(@user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %><br><br>
-  <%= f.label :profile_image,'プロフィール画像をアップロード', class: "btn btn-secondary rounded-pill col-sm-3" %>
-  <%= f.file_field :profile_image, style: "display:none;" %>
+  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 </div>
 
 <div class="form-group col-xs-12">

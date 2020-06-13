@@ -7,7 +7,7 @@
       <% if user_signed_in? %>   
 
       <li>
-
+        <%= link_to 'マイページ', user_path(current_user.id), class: '' %>
       </li>
       <li>
         <%= link_to '会員一覧', users_path, class: ''  %>
@@ -28,18 +28,14 @@
         <%= link_to 'お悩み一覧', posts_path, class: '' %>
       </li>
       <li>
-        <%= link_to 'sign up', new_user_registration_path, class: '' %>
+        <%= link_to 'サインアップ', new_user_registration_path, class: '' %>
       </li>
       <li>
-        <%= link_to 'login', new_user_session_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
       </li>
       <li>
         <%= link_to 'Home', root_path, class: '' %>
       </li>
-      <li>
-        <%= link_to 'About', homes_about_path, class: '' %>
-      </li>
-
       <% end %>
     </ul>
   </nav>

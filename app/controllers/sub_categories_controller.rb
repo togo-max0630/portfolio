@@ -1,4 +1,5 @@
 class SubCategoriesController < ApplicationController
+  before_action user_admin, only: [:index]
 
   def index
     @sub_category = SubCategory.new
@@ -23,7 +24,19 @@ class SubCategoriesController < ApplicationController
     render 'index'
   end
 
+  private
+
   def sub_category_params
     params.require(:sub_category).permit(:name)
+  end
+
+  def user_admin
+    @sub_category = SubCategory.new
+    @sub_categories = SubCategory.all
+    if current_user.admin == false
+      redirect_to root_path
+    else
+      render action: "index"
+    end
   end
 end

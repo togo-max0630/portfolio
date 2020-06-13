@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action user_admin, only: [:index]
   
   def index
     @category = Category.new
@@ -27,6 +28,16 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def user_admin
+    @category = Category.new
+    @categories = Category.all
+    if current_user.admin == false
+      redirect_to root_path
+    else
+      render action: "index"
+    end
   end
 
 end
