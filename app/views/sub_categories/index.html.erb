@@ -1,6 +1,6 @@
 <div class="col-xs-12">
-
   <!-- 業界追加 -->
+  <%= render "layouts/error_messages", resource: @sub_category %>
   <%= form_for(@sub_category) do |f| %>
   <div>
     <%= f.label :"カテゴリー名" %>

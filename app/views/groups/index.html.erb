@@ -1,5 +1,6 @@
 <div class="col-xs-3">
-   <%= render 'groups/newform', post: @post %>
+   <%= render "layouts/error_messages", resource: @group %>
+   <%= render 'groups/newform', group: @group %>
 </div>
 <!-- グループ一覧 -->
 <div class="col-xs-9">

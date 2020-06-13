@@ -23,7 +23,8 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.user_id = current_user.id
 		if @post.save
-		  redirect_to posts_path, notice: "作成できたよー"
+			flash[:notice] = "投稿作成したよ"
+		  redirect_to posts_path
 		else
 			@posts = Post.all
 			@user = current_user
@@ -34,7 +35,8 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
-			redirect_to posts_path, notice: "アップデートできたよー"
+			flash[:notice] = "アップデートしたよ"
+			redirect_to posts_path
 		else
 			render "edit"
 		end
@@ -43,7 +45,8 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to posts_path, notice: "削除できたよー"
+		flash[:notice] = "削除したよ"
+		redirect_to posts_path
 	end
 
 	private

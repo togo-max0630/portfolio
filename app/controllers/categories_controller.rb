@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
+      flash[:notice] = "カテゴリー作成したよ"
       redirect_to categories_path
     else
       @categories = Category.all
@@ -16,6 +17,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:notice] = "カテゴリー削除したよ"
+    render 'index'
   end
 
   private

@@ -17,7 +17,8 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.user_id = current_user.id
     if @group.save
-      redirect_to groups_path, notice: "作成できたよー"
+      flash[:notice] = "新規グループ作成したよ"
+      redirect_to groups_path
     else
       @groups = Group.all
       @user = current_user
@@ -28,7 +29,8 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    redirect_to groups_path, notice: "削除できたよー"
+    flash[:notice] = "グループ削除したよ"
+    redirect_to groups_path
   end
 
   private

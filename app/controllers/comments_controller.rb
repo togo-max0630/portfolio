@@ -6,12 +6,14 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save
+    flash[:notice] = "コメント送信したよ"
     render 'index'
   end
   
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:notice] = "コメント削除したよ"
     render 'index'
   end
   
