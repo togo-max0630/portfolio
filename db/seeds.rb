@@ -241,3 +241,11 @@ end
     sub_category_id: 6
   )
 
+  Tag.create([
+    { name: '辛い'},
+    { name: '教えて'},
+    { name: '共感'},
+    { name: '愛'},
+    { name: '愛示しーや'}
+  ])
+

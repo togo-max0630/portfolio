@@ -11,6 +11,11 @@
       </p>
     </div>
     <div class="field">
+      <% @post.tags.each do |tag| %>
+        タグ<%= tag.name %>
+      <% end %>
+    </div>
+    <div class="field">
       <p>
         タイトル<%= @post.title %>
       </p>

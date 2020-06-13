@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   belongs_to :sub_category
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_tags
 
   validates :category_id, :sub_category_id, :title, :body, presence: true
 end

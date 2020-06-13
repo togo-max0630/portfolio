@@ -13,6 +13,7 @@
       <th></th>
       <th>業界</th>
       <th>職種</th>
+      <th>タグ</th>
       <th>タイトル</th>
     </tr>
   </thead>
@@ -28,6 +29,11 @@
       </td>
       <td>
         <%= post.sub_category.name %>
+      </td>
+      <td>
+        <% post.tags.each do |tag| %>
+          <%= tag.name %>
+        <% end %>
       </td>
       <td>
         <%= link_to post.title, post_path(post.id)%>
