@@ -17,6 +17,16 @@
     residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 1}",
   )
 end
+  # User.create!(
+  #   email: "admin@admin.com",
+  #   name: "田中",
+  #   nickname: "ぱおん",
+  #   introduction: "ぴえんぴえん",
+  #   password: "123456",
+  #   postal_code: "1234567",
+  #   residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2",
+  #   user.admin = true
+  # )
 
 
   Group.create!(

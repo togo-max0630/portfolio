@@ -72,6 +72,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'pry-byebug'
 gem 'rubocop-airbnb'
+gem 'font-awesome-sass', '~> 5.4.1'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

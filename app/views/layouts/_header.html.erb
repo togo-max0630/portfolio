@@ -7,33 +7,42 @@
       <% if user_signed_in? %>   
 
       <li>
-        <%= link_to 'マイページ', user_path(current_user.id), class: '' %>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <%= link_to 'マイページ', user_path(current_user.id) %>
       </li>
       <li>
-        <%= link_to '会員一覧', users_path, class: ''  %>
+        <span class="fa fa-users "></span> 
+        <%= link_to '会員一覧', users_path %>
       </li>
       <li>
-        <%= link_to 'お悩み一覧', posts_path, class: '' %>
+        <span class="fas fa-keyboard"></span>
+        <%= link_to 'お悩み一覧', posts_path %>
       </li>
       <li>
-        <%= link_to 'チャット一覧', groups_path, class: '' %>
+        <span class="fa fa-comments "></span> 
+        <%= link_to 'チャット一覧', groups_path %>
       </li>
       <li>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: '' %>
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       </li>
 
       <% else %>
 
       <li>
-        <%= link_to 'お悩み一覧', posts_path, class: '' %>
+        <span class="fas fa-keyboard"></span>
+        <%= link_to 'お悩み一覧', posts_path %>
       </li>
       <li>
+        <span class="fas fa-smile"></span>
         <%= link_to 'サインアップ', new_user_registration_path, class: '' %>
       </li>
       <li>
+        <span class="fas fa-frown"></span>
         <%= link_to 'ログイン', new_user_session_path, class: '' %>
       </li>
       <li>
+        <span class="fa fa-home "></span> 
         <%= link_to 'Home', root_path, class: '' %>
       </li>
       <% end %>

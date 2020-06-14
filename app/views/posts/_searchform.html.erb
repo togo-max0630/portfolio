@@ -1,0 +1,7 @@
+<%= search_form_for @q, url: posts_path do |f| %>
+  <%= f.label :category_name_cont, "業界" %>
+  <%= f.search_field :category_name_cont %>
+  <%= f.label :sub_category_name_cont, "職種" %>
+  <%= f.search_field :sub_category_name_cont %>
+  <%= f.submit class: 'search-q-btn' %>
+<% end %>

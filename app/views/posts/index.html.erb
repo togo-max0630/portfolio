@@ -1,6 +1,7 @@
 <div class="col-xs-3">
-  
-<%= render "layouts/error_messages", resource: @post %>
+
+<%= render 'posts/searchform', post: @post %> 
+<%= render 'layouts/error_messages', resource: @post %>
 <%= render 'posts/newform', post: @post %>
 </div>
 <!-- 投稿一覧表示 -->
