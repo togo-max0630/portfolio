@@ -53,6 +53,9 @@ class User < ApplicationRecord
   validates :name, :nickname, :residence, presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
 
-
+  # 退会機能
+  def active_for_authentication?
+    super && (self.is_valid == false)
+  end
 
 end

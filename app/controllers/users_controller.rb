@@ -23,6 +23,11 @@ class UsersController < ApplicationController
 	end
 
 	def out
+    @user = current_user
+    @user.update(is_valid: true)
+    reset_session
+    flash[:notice] = "ありがとうございました。"
+    redirect_to root_path
 	end
 
 	def update

@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_082637) do
     t.string "residence"
     t.string "profile_image_id"
     t.text "introduction"
-    t.boolean "is_valid"
+    t.boolean "is_valid", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
