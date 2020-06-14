@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user!, {only: [:edit]}
 
 	def index
 		@post = Post.new
@@ -17,6 +18,9 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+		if @post.user != current_user
+			redirect_to posts_path
+		end
 	end
 
 	def create

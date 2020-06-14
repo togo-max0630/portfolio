@@ -2,7 +2,7 @@
 <h2>マイページ</h2>
   <table class="table table-bordered table-condensed">
     <tr>
-        <%= attachment_image_tag(@user, :profile_image, size: "200x120", fallback: "4dbc7e0f.jpg") %>
+        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
     </tr>
     <tr>
       <th class="info col-xs-2">ニックネーム</th>
@@ -36,7 +36,9 @@
         <%= link_to "戻る", users_path, class: "back" %>
       </th>
       <th>
+        <% if @user.id == current_user.id %>
         <%= link_to "編集", edit_user_path(@user.id) %>
+        <% end %>
       </th>
     </tr>
   </table>

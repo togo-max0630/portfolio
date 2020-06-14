@@ -1,4 +1,5 @@
 class RerationshipsController < ApplicationController
+  before_action :authenticate_user!
 
   def follow
     current_user.follow(params[:id])

@@ -24,7 +24,7 @@
     <% @posts.each do |post| %>
     <tr>
       <td>
-        <%= attachment_image_tag(post.user, :profile_image, size: "100x60", fallback: "4dbc7e0f.jpg") %>
+        <%= attachment_image_tag(post.user, :profile_image, size: "50x50", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
       </td>
       <td>
         <%= post.category.name %>

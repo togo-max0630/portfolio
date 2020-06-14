@@ -32,9 +32,11 @@
     </div>
 
     <div class="field">
+        <% if @post.user == current_user %>
         <%= link_to "編集", edit_post_path(@post.id) %>
-        <%= link_to "戻る", posts_path, class: "back" %>
         <%= link_to "削除",@post, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
+        <% end %>
+        <%= link_to "戻る", posts_path, class: "back" %>
     </div>
 </div>
 
