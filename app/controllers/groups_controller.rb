@@ -21,8 +21,8 @@ class GroupsController < ApplicationController
       flash[:notice] = "新規グループ作成したよ"
       redirect_to groups_path
     else
-      @groups = Group.all
-      @user = current_user
+      @q = Group.ransack(params[:q])
+      @groups = @q.result(distinct: true).page(params[:page]).per(4)
       render 'index'
     end
   end
