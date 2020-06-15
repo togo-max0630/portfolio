@@ -12,6 +12,7 @@
 <table class="table table-hover table-inverse">
   <thead>
     <tr>
+      <th>順位</th>
       <th></th>
       <th>業界</th>
       <th>職種</th>
@@ -21,8 +22,12 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.each.with_index(1) do |post, index| %>
     <tr>
+      <td>
+        <%= index %>位
+        <i class="fa fa-eye "></i>
+        <%=  @post.impressions_count %>
       <td>
         <%= attachment_image_tag(post.user, :profile_image, size: "50x50", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
       </td>

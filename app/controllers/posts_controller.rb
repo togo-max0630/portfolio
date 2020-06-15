@@ -1,17 +1,18 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, {only: [:edit]}
-
+	
 	def index
 		@post = Post.new
 		@q = Post.ransack(params[:q])
-		@posts = @q.result(distinct: true).page(params[:page]).per(4)
+		# ransack.kaminair.impressionistのGem適応@posts = Post.all
+		@posts = @q.result(distinct: true).order(impressions_count: 'DESC').page(params[:page]).per(4)
 		@user = current_user
 	end
 
 	def show
 		@post = Post.find(params[:id])
 		# アクセス数のカウント(同じ人が見た場合無効)
-
+		impressionist(@post, nil, unique: [:ip_address])
 		@comment = Comment.new
 		@comments = @post.comments.order(created_at: :desc)
 	end
@@ -30,7 +31,8 @@ class PostsController < ApplicationController
 			flash[:notice] = "投稿作成したよ"
 		  redirect_to posts_path
 		else
-			@posts = Post.all
+			@q = Post.ransack(params[:q])
+			@posts = @q.result(distinct: true).page(params[:page]).per(4)
 			@user = current_user
 			render 'index'
 		end
