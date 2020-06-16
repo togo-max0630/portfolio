@@ -18,15 +18,13 @@
     <div class="glovalNavigation">
       <%= render "layouts/glovalNavigation" %>
     </div>
-    
-    <div class="contents">
-      <div class="container">
-        <div class="row">
-          <div id="flash">
-            <%= render "layouts/flash" %>
-          </div>
-            <%= yield %>
+
+    <div class="container test">
+      <div class="row">
+        <div id="flash">
+          <%= render "layouts/flash" %>
         </div>
+        <%= yield %>
       </div>
     </div>
 

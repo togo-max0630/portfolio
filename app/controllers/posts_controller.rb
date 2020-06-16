@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, {only: [:edit]}
+	impressionist :actions=> [:show]
 	
 	def index
 		@post = Post.new
 		@q = Post.ransack(params[:q])
 		# ransack.kaminair.impressionistのGem適応@posts = Post.all
-		@posts = @q.result(distinct: true).order(impressions_count: 'DESC').page(params[:page]).per(4)
+		@posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
+		if params[:page].nil?
+			@page = 0
+		else
+		  @page = (params[:page].to_i - 1) * 4
+		end
 		@user = current_user
 	end
 

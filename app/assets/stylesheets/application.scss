@@ -62,9 +62,7 @@ header {
   left: 0;
   display: flex;
   align-items: center;
-}
-
-contents {
+  z-index: 30;
 }
 
 h1 {
@@ -99,10 +97,11 @@ li {
   text-align: center; 
   background-color: #888;
   color: #fff;
-  width: 100%;
-  display: flex;
+  width: 100%; 
+}
 
-
+.test {
+  z-index: 20;
 }
 
 .footer {
@@ -114,7 +113,6 @@ li {
   bottom: 0;
   margin-bottom: 0;
 }
-
 
 
 
@@ -163,24 +161,23 @@ table{
 }
 
 table th:nth-child(1) {
-  width: 10%;
+
 }
 table th:nth-child(2) {
-  width: 20;
+
 }
 table th:nth-child(3) {
-  width: 20%;
+
 }
 table th:nth-child(4) {
-  width: 20%;
+
 }
 td{
   padding: 10px;
+  background: #f1fafe;
 }
 th{
   background: #10a0e0;
   color: #fff;
 }
-td{
-  background: #f1fafe;
-}
+
