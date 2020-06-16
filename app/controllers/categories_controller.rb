@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action user_admin, only: [:index]
   
   def index
     @category = Category.new

@@ -1,4 +1,5 @@
 class SubCategoriesController < ApplicationController
+  before_action user_admin, only: [:index]
 
   def index
     @sub_category = SubCategory.new
