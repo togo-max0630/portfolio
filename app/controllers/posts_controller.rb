@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 	
 	def index
 		@post = Post.new
+		@posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
 		@q = Post.ransack(params[:q])
 		# ransack.kaminair.impressionistのGem適応@posts = Post.all
 		@posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
