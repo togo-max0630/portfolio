@@ -7,14 +7,12 @@ class MessagesController < ApplicationController
     @message = @group.messages.build(message_params)
     @message.user_id = current_user.id
     @message.save
-    flash[:notice] = "メッセージ送信したよ"
     render 'index'
   end
   
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    flash[:notice] = "メッセージ削除したよ"
     render 'index'
   end
   

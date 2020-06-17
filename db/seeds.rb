@@ -15,18 +15,22 @@
     password: "123456",
     postal_code: "1234567",
     residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 1}",
+    admin: false
   )
 end
-  # User.create!(
-  #   email: "admin@admin.com",
-  #   name: "田中",
-  #   nickname: "ぱおん",
-  #   introduction: "ぴえんぴえん",
-  #   password: "123456",
-  #   postal_code: "1234567",
-  #   residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2",
-  #   user.admin = true
-  # )
+
+  User.create!(
+    email: "admin@admin.com",
+    name: "山田隆文",
+    nickname: "山田",
+    introduction: "カリスマ",
+    password: "123456",
+    postal_code: "1234567",
+    residence: "大阪府大阪市東大阪市1-2-3 山田隆文ビル2階",
+    admin: true
+  )
+
+
 
 
   Group.create!(

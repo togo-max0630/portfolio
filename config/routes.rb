@@ -10,7 +10,10 @@ Rails.application.routes.draw do
       get 'quit'
       patch 'out'
     end
+    resources :categories
+    resources :sub_categories
   end
+
   post 'follow/:id' => 'rerationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'rerationships#unfollow', as: 'unfollow' # フォロー外す
   get 'users/following/:user_id', to: 'users#following', as:'users_following'
@@ -21,11 +24,12 @@ Rails.application.routes.draw do
     resources :likes, only:[:create, :destroy]
   end 
 
-  resources :categories
-  resources :sub_categories
-
   resources :groups do
     resources :messages, only:[:create, :destroy]
   end
-  
+
+  resources :categories
+  resources :sub_categories
+
+
 end

@@ -11,10 +11,10 @@
       <%= message.user.name %>
     </div>
 
-    <div class="message-text">
+    <div class="field">
       <%= message.content %>
       <% if message.user == current_user %>
-        <%= link_to "Destroy", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "message_destroy" %>
+        <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "message_destroy" %>
       <% end %>
     </div>
 

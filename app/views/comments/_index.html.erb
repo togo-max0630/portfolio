@@ -11,10 +11,10 @@
       <%= comment.user.name %>
     </div>
 
-    <div class="comment-text">
+    <div class="field">
       <%= comment.content %>
       <% if comment.user == current_user %>
-        <%= link_to "Destroy", post_comment_path(comment.post_id, comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "comment_destroy" %>
+        <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "comment_destroy" %>
       <% end %>
     </div>
 
