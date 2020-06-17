@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get 'users/follower/:user_id', to: 'users#follower', as:'users_follower'
 
   resources :posts do
-    resource :likes, only:[:create, :destroy]
     resources :comments, only:[:create, :destroy]
+    resources :likes, only:[:create, :destroy]
   end 
 
   resources :categories

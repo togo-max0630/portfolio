@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 	
 	def index
 		@post = Post.new
+		@like = Like.new
 		@posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
 		@q = Post.ransack(params[:q])
 		# ransack.kaminair.impressionistのGem適応@posts = Post.all
@@ -18,7 +19,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
-		# アクセス数のカウント(同じ人が見た場合無効)
+		@like = Like.new
+		# アクセス数のカウント
 		impressionist(@post, nil, unique: [:ip_address])
 		@comment = Comment.new
 		@comments = @post.comments.order(created_at: :desc)

@@ -1,0 +1,25 @@
+<% if user_signed_in? %>
+
+  <% unless post.like_user(current_user.id).blank? %>
+    <%= link_to post_like_path(post_id: post.id ,id: post.likes[0].id), method: :delete, remote: true do %>
+      <span class="fa fa-heart" aria-hidden="true" style="color: red;"></span>
+    <%= post.likes_count %>
+  <% end %>
+  <% else %>
+    <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+      <span class="fa fa-heart" aria-hidden="true"></span>
+    <%= post.likes_count %>
+    <% end %>
+  <% end %>
+
+<% else %>
+
+  <% if post.likes_count > 0 %>
+    <span class="fa fa-heart" aria-hidden="true" style="color: red;"></span>
+    <%= post.likes_count %>
+  <% else %>
+    <span class="fa fa-heart" aria-hidden="true"></span>
+    <%= post.likes_count %>
+  <% end %>
+
+<% end %>

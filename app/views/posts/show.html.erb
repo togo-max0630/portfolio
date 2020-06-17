@@ -27,6 +27,12 @@
     </div>
     <div class="field">
       <p>
+        いいね数<i class="fa fa-heart" aria-hidden="true"></i>:
+        <%= @post.likes.count %>
+      </p>
+    </div>
+    <div class="field">
+      <p>
         コメント数<i class="fa fa-comment"></i>:
         <%= @post.comments.count %>
       </p>
@@ -37,7 +43,6 @@
         <%=  @post.impressionist_count %>
       </p>
     </div>
-
     <div class="field">
         <% if @post.user == current_user %>
         <%= link_to "編集", edit_post_path(@post.id) %>
