@@ -1,8 +1,18 @@
 <%= search_form_for @q, url: posts_path do |f| %>
   <%= f.label :category_name_cont, "業界" %>
-  <%= f.search_field :category_name_cont %>
+  <%= f.collection_select(:category_name_cont, Category.all, :name, :name, prompt: "-- 選択してください --" ) %>
   <%= f.label :sub_category_name_cont, "職種" %>
-  <%= f.search_field :sub_category_name_cont %>
+  <%= f.collection_select(:sub_category_name_cont, SubCategory.all, :name, :name, prompt: "-- 選択してください --" ) %>
+  <%= f.label :tag_name_cont, "タグ" %>
+  <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                     {
+                       prompt: 'タグで絞り込み検索',
+                       onchange: 'submit(this.form);'
+                     }
+      %>
+    <% end %>
   <%= f.submit class: 'search-q-btn' %>
 <% end %>
 

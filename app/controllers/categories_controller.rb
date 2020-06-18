@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action user_admin, only: [:index]
+  before_action :user_admin, only: [:index]
   
   def index
     @category = Category.new
@@ -39,5 +39,6 @@ class CategoriesController < ApplicationController
       render action: "index"
     end
   end
+
 
 end

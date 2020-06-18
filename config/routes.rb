@@ -10,8 +10,6 @@ Rails.application.routes.draw do
       get 'quit'
       patch 'out'
     end
-    resources :categories
-    resources :sub_categories
   end
 
   post 'follow/:id' => 'rerationships#follow', as: 'follow' # フォローする
