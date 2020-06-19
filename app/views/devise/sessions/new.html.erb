@@ -1,31 +1,31 @@
 <div class = "wrapper">
 <div class="form-signin">
-<h2 class="form-signin-heading">Welcome Back! Please Sign In</h2>
+<h2 class="form-signin-heading">Welcome Sign In</h2>
 <hr class="colorgraph"><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  %>
 
-  <div class="form-control">
-    <%= f.label :"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-control col-xs-12">
+    <%= f.label :"email", class: "col-sm-5" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-7" %>
   </div>
   
 
-  <div class="form-control">
-    <%= f.label :"パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="form-control col-xs-12">
+    <%= f.label :"パスワード", class: "col-sm-5" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-7" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="form-control">
+    <div class="form-control col-xs-12">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="btn btn-lg btn-primary btn-block">
-    <%= f.submit "Log in" %>
-  </div>
+
+  <%= f.submit "Log in", class: "btn btn-primary col-xs-12" %>
+
 <% end %>
 
 

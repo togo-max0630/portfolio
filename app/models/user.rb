@@ -25,30 +25,6 @@ class User < ApplicationRecord
   def following?(user)
      following_user.include?(user)
   end
-
-  
-  # フォロー機能(foregin_key = 入口 source= 出口)
-  # has_many :rerationships
-  # has_many :followings, through: :rerationships, source: :follow
-  # has_many :reverse_of_rerationships, class_name: 'Rerationship', foreign_key: 'follow_id'
-  # has_many :followers, through: :rerationships, source: :user
-  
-  # フォローするユーザーが自身でないか
-  # def follow(other_user)
-  #   unless self == other_user 
-  #     self.rerationships.find_or_create_by(follow_id: other_user.id)
-  #   end
-  # end
-
-  # def unfollow(other_user)
-  #   rerationship == self.rerationships.find_by(follow_id: other_user.id)
-  #   rerationship.destroy if rerationship
-  # end
-
-  # # フォローしているユーザーに自信が含まれていないか確認
-  # def following?(other_user)
-  #   self.followings.include?(other_user)
-  # end
   
   validates :name, :nickname, :residence, presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
