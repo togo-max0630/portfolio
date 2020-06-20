@@ -11,12 +11,21 @@
   </div>
 
   <div class="form-control col-xs-12">
-    <%= f.label :"あだ名", class: "name col-sm-5" %>
+    <%= f.label :"あだ名", class: "col-sm-5" %>
     <%= f.text_field :nickname, autofocus: true, autocomplete: "ニックネーム", class: "col-sm-5" %>
   </div>
 
   <div class="form-control col-xs-12">
-    <%= f.label :email, class: "name col-sm-5" %>
+    <%= f.label :"職種", class: "col-sm-4" %>
+    <%= f.select :category, User.categories.keys, prompt: "-- 選択してください --", class: "col-sm-4" %>
+  </div>
+  <div class="form-control col-xs-12">
+    <%= f.label :"職種", class: "col-sm-4" %>
+    <%= f.select :sub_category, User.sub_categories.keys, prompt: "-- 選択してください --", class: "col-sm-4" %>
+  </div>
+
+  <div class="form-control col-xs-12">
+    <%= f.label :email, class: "col-sm-5" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-7" %>
   </div>
 

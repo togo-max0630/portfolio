@@ -7,6 +7,7 @@
         <tr>
           <th>写真</th>
           <th>ニックネーム</th>
+          <th>業界・職種</th>
           <th>投稿数</th>
           <th>フォロー？</th>
         </tr>
@@ -22,6 +23,10 @@
           </td>
           <td>
             <%= user.nickname %>
+          </td>
+          <td>
+            <%= user.category %>・
+            <%= user.sub_category %>
           </td>
           <td>
             <%= user.posts.count %>

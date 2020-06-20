@@ -6,15 +6,77 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |n|
+5.times do |n|
   User.create!(
     email: "test#{n + 1}@test.com",
     name: "田中#{n + 1}",
     nickname: "ぴえん#{n + 1}",
     introduction: "ぴえんぴえん#{n + 1}",
+    category: "メーカー",
+    sub_category: "営業",
     password: "123456",
     postal_code: "1234567",
     residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 1}",
+    admin: false
+  )
+end
+
+5.times do |n|
+  User.create!(
+    email: "test#{n + 6}@test.com",
+    name: "田中#{n + 6}",
+    nickname: "ぴえん#{n + 6}",
+    introduction: "ぴえんぴえん#{n + 6}",
+    category: "小売",
+    sub_category: "マーケティング",
+    password: "123456",
+    postal_code: "1234567",
+    residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 6}",
+    admin: false
+  )
+end
+
+5.times do |n|
+  User.create!(
+    email: "test#{n + 12}@test.com",
+    name: "田中#{n + 12}",
+    nickname: "ぴえん#{n + 12}",
+    introduction: "ぴえんぴえん#{n + 12}",
+    category: "サービス",
+    sub_category: "販売",
+    password: "123456",
+    postal_code: "1234567",
+    residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 12}",
+    admin: false
+  )
+end
+
+5.times do |n|
+  User.create!(
+    email: "test#{n + 18}@test.com",
+    name: "田中#{n + 18}",
+    nickname: "ぴえん#{n + 18}",
+    introduction: "ぴえんぴえん#{n + 18}",
+    category: "ソフトウェア・通信",
+    sub_category: "エンジニア",
+    password: "123456",
+    postal_code: "1234567",
+    residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 18}",
+    admin: false
+  )
+end
+
+5.times do |n|
+  User.create!(
+    email: "test#{n + 24}@test.com",
+    name: "田中#{n + 24}",
+    nickname: "ぴえん#{n + 24}",
+    introduction: "ぴえんぴえん#{n + 24}",
+    category: "商社",
+    sub_category: "工場",
+    password: "123456",
+    postal_code: "1234567",
+    residence: "東京都渋谷区神南1丁目19-11 パークウェースクエア2 4階#{n + 24}",
     admin: false
   )
 end
@@ -24,6 +86,8 @@ end
     name: "山田隆文",
     nickname: "山田",
     introduction: "カリスマ",
+    category: "マスコミ",
+    sub_category: "エンジニア",
     password: "123456",
     postal_code: "1234567",
     residence: "大阪府大阪市東大阪市1-2-3 山田隆文ビル2階",
@@ -141,6 +205,46 @@ end
 
   SubCategory.create!(
     name: "デザイナー"
+  )
+
+  Post.create!(
+    user_id: 21,
+    title: "ストレス溜まる",
+    body: "新卒一年目で上司からいじめに遭います。皆さんの環境はどのような感じですか",
+    category_id: 1,
+    sub_category_id: 1
+  )
+
+  Post.create!(
+    user_id: 12,
+    title: "眠たい",
+    body: "会社に行きたくないです",
+    category_id: 2,
+    sub_category_id: 5
+  )
+
+  Post.create!(
+    user_id: 1,
+    title: "転職活動",
+    body: "転職活動をしています。IT業界について教えてください",
+    category_id: 3,
+    sub_category_id: 6
+  )
+
+  Post.create!(
+    user_id: 19,
+    title: "転職活動",
+    body: "転職活動をしています。IT業界について教えてください",
+    category_id: 6,
+    sub_category_id: 12
+  )
+
+  Post.create!(
+    user_id: 19,
+    title: "転職活動",
+    body: "転職活動をしています。IT業界について教えてください",
+    category_id: 6,
+    sub_category_id: 1
   )
 
   Post.create!(

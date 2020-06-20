@@ -24,6 +24,13 @@
       </th>
     </tr>
     <tr>
+      <th>業界・職種</th>
+      <th>
+        <%= @user.category %>
+        ・<%= @user.sub_category %>
+      </th>
+    </tr>
+    <tr>
       <th>フォロー</th>
       <th id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id) %>
     </tr>

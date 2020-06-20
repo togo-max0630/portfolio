@@ -29,6 +29,9 @@ class User < ApplicationRecord
   validates :name, :nickname, :residence, presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
 
+  enum category: {"メーカー": 0, "小売": 1, "サービス": 2, "ソフトウェア・通信": 3, "商社": 4, "金融": 5, "マスコミ": 6, "官公庁・公社・団体": 7}
+  enum sub_category: {"営業": 0, "コンサルタント": 1, "事務": 2, "経理": 3, "人事": 4, "マーケティング": 5, "販売": 6, "飲食": 7, "エンジニア": 8, "看護師": 9, "ドライバー": 10, "工場": 11, "デザインー": 12}
+
   # 退会機能
   def active_for_authentication?
     super && (self.is_valid == false)
