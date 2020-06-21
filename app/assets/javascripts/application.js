@@ -57,6 +57,17 @@ $('.flip').mouseenter(function(){
     
   return false;
 });
+});
 
-
+// スライドショー機能
+$(function() {
+  $('.a').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+  // スライド下部の星に触ると画像が切り替わる
+  $('.slick-dots li').on('mouseover', function() {
+  $('.a').slick('goTo', $(this).index());
+  });
 });
