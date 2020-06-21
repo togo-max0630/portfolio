@@ -48,4 +48,15 @@ topBtn.click(function(){
 });
 
 
+// カードに触るととひっくり返る
+$('.flip').mouseenter(function(){         
+      $(this).find('.card').addClass('flipped').mouseleave(function()
+      {
+         $(this).removeClass('flipped');
+      });
+    
+  return false;
+});
+
+
 });

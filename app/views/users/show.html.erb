@@ -1,53 +1,62 @@
-<div class="col-xs-12">
 <h2>マイページ</h2>
-  <table class="table table-hover table-inverse">
-    <tr>
-        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
-    </tr>
-    <tr>
-      <th class="info col-xs-2">ニックネーム</th>
-      <th>
-        <%= @user.nickname %>
-      </th>
-      <th>
-        <% if @user.id != current_user.id %>
-        <span id='follow-button_<%= @user.id %>'>
-        <%= render 'users/follow-button', user: @user %>
-        </span>
-        <% end %>
-      </th>
-    </tr>
-    <tr>
-      <th>自己紹介</th>
-      <th>
-        <%= @user.introduction %>
-      </th>
-    </tr>
-    <tr>
-      <th>業界・職種</th>
-      <th>
-        <%= @user.category %>
-        ・<%= @user.sub_category %>
-      </th>
-    </tr>
-    <tr>
-      <th>フォロー</th>
-      <th id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id) %>
-    </tr>
-    <tr>
-      <th>フォロワー</th>
-      <th id= 'follower-count_<%= @user.id %>'><%= link_to "#{@user.followed.count}", users_follower_path(@user.id) %>
-    </tr>
-    <tr>
-      <th>
-        <%= link_to "戻る", users_path, class: "back" %>
-      </th>
-      <th>
-        <% if @user.id == current_user.id %>
-        <%= link_to "編集", edit_user_path(@user.id) %>
-        <% end %>
-      </th>
-    </tr>
-  </table>
-</div>
+<div class="flip">
+  <div class="card"> 
+    <div class="face front"> 
+      <div class="details">
+        <div>
+          <%= @user.nickname %>
+            <% if @user.id != current_user.id %>
+              <span id='follow-button_<%= @user.id %>'>
+                <%= render 'users/follow-button', user: @user %>
+              </span>
+          <% end %>
+        </div>
+        <hr>
+        
+        <div class="role">
+          職種:<%= @user.category %>
+        </div>
 
+        <div class="role">
+          職種:<%= @user.sub_category %>
+        </div>
+        
+        <div class="role">
+          自己紹介
+        </div>
+      
+        <div class="role">
+          <%= @user.introduction %>
+        </div>
+         
+      </div>
+        <div class="avatar">
+          <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
+        </div>
+    </div>
+    <div class="face back"> 
+      <div class="social">
+        <table>
+          <tr>
+            <td><p>フォロー</p></td>
+            <td id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id), class: "btn  btn-success" %></td>
+          </tr>
+          <tr>
+            <td>フォロワー</td>
+            <td id= 'follower-count_<%= @user.id %>'><%= link_to "#{@user.followed.count}", users_follower_path(@user.id), class: "btn btn-success" %></td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "戻る", users_path, class: "btn btn-primary" %>
+            </td>   
+            <td>
+              <% if @user.id == current_user.id %>
+                <%= link_to "編集", edit_user_path(@user.id), class: "btn btn-success" %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div> 
+    </div>       
+  </div> 
+</div> 
