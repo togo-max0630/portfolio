@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def out
+    # 退会機能
     @user = current_user
     @user.update(is_valid: true)
     reset_session

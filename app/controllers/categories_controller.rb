@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  # user_adminしか見ることができない
   before_action :user_admin, only: [:index]
   
   def index
@@ -30,6 +31,7 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name)
   end
 
+  # user_adminの定義づけ
   def user_admin
     @category = Category.new
     @categories = Category.all

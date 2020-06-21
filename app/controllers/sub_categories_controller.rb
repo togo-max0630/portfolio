@@ -1,4 +1,5 @@
 class SubCategoriesController < ApplicationController
+  # user_adminしか見ることができない
   before_action :user_admin, only: [:index]
 
   def index
@@ -30,6 +31,7 @@ class SubCategoriesController < ApplicationController
     params.require(:sub_category).permit(:name)
   end
 
+  # user_adminの定義づけ
   def user_admin
     @sub_category = SubCategory.new
     @sub_categories = SubCategory.all

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 	
 	def index
 		@post = Post.new
+		@user = current_user
 		@like = Like.new
 		@q = Post.ransack(params[:q])
 		if params[:tag_id].present? 
@@ -12,14 +13,13 @@ class PostsController < ApplicationController
 		   # ransack.kaminair.impressionistのGem適応@posts = Post.all
 		  @posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
 		end
-
-
+    
+    # pageのランク付け
 		if params[:page].nil?
 			@page = 0
 		else
 		  @page = (params[:page].to_i - 1) * 4
 		end
-		@user = current_user
 	end
 
 	def show
@@ -45,9 +45,20 @@ class PostsController < ApplicationController
 			flash[:notice] = "投稿作成したよ"
 		  redirect_to posts_path
 		else
-			@q = Post.ransack(params[:q])
-			@posts = @q.result(distinct: true).page(params[:page]).per(4)
 			@user = current_user
+			@q = Post.ransack(params[:q])
+			if params[:tag_id].present? 
+			  @posts = Tag.find(params[:tag_id]).posts.page(params[:page]).per(4)
+			else
+			   # ransack.kaminair.impressionistのGem適応@posts = Post.all
+			  @posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
+			end
+
+			if params[:page].nil?
+				@page = 0
+			else
+			  @page = (params[:page].to_i - 1) * 4
+			end
 			render 'index'
 		end
 	end

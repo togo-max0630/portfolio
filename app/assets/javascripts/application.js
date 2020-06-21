@@ -59,6 +59,7 @@ $('.flip').mouseenter(function(){
 });
 });
 
+
 // スライドショー機能
 $(function() {
   $('.a').slick({
