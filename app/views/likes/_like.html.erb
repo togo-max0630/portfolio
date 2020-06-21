@@ -12,14 +12,4 @@
     <% end %>
   <% end %>
 
-<% else %>
-
-  <% if post.likes_count > 0 %>
-    <span class="fa fa-heart" aria-hidden="true" style="color: red;"></span>
-    <%= post.likes_count %>
-  <% else %>
-    <span class="fa fa-heart" aria-hidden="true"></span>
-    <%= post.likes_count %>
-  <% end %>
-
 <% end %>

@@ -5,10 +5,15 @@ class PostsController < ApplicationController
 	def index
 		@post = Post.new
 		@like = Like.new
-		@posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
 		@q = Post.ransack(params[:q])
-		# ransack.kaminair.impressionistのGem適応@posts = Post.all
-		@posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
+		if params[:tag_id].present? 
+		  @posts = Tag.find(params[:tag_id]).posts.page(params[:page]).per(4)
+		else
+		   # ransack.kaminair.impressionistのGem適応@posts = Post.all
+		  @posts = @q.result(distinct: true).page(params[:page]).per(4).order(impressions_count: 'DESC')
+		end
+
+
 		if params[:page].nil?
 			@page = 0
 		else

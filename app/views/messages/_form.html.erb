@@ -1,4 +1,7 @@
-<%= form_with(model: [group, message], url: group_messages_path(@group) ) do |f| %>
-    <%= f.text_area :content, class: "content" %>
-    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
-<% end %>
+<div class="panel-footer">
+  <div class="form-group">
+    <%= form_with(model: [group, message], url: group_messages_path(@group) ) do |f| %>
+      <%= f.text_field :content, size: "100×100", class: "form-control input-sm" %>
+    <% end %>
+  </div>
+</div>

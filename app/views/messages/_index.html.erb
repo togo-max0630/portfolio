@@ -1,22 +1,27 @@
 <!-- 非同期通信 -->
 <%= messages.count %>件
+
 <% messages.each do |message| %>
-  <% unless message.id.nil? %>
+<% unless message.id.nil? %>
 
+  <li class="left clearfix">
+    
     <div class="field">
-      <%= attachment_image_tag(message.user, :profile_image, size: "50x50", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
+      <span class="chat-img pull-left">
+      　　<%= attachment_image_tag(message.user, :profile_image, size: "50x50", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
+      </span>
+      <strong class="primary-font"><%= message.user.name %></strong>
     </div>
 
     <div class="field">
-      <%= message.user.name %>
+      <p>
+        <%= message.content %>
+        <% if message.user == current_user %>
+          <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "btn-sm btn-danger" %>
+        <% end %>
+      </p>
     </div>
+  </li>
 
-    <div class="field">
-      <%= message.content %>
-      <% if message.user == current_user %>
-        <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "message_destroy" %>
-      <% end %>
-    </div>
-
-  <% end %>
+<% end %>
 <% end %>

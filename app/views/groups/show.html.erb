@@ -12,21 +12,29 @@
 </div>
 
 <div class="col-xs-9">
+  <div class="field">
+      <h4>コメント<i class="fa fa-comment"></i></h4>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <a class="btn-xs"></a>
+    </div>
 
     <% if user_signed_in? %>
 
-    <div class="comment-create">
-      <h4>コメントする</h4>
-        <%= render partial: 'messages/form', locals: { message: @message, group: @group } %>
-    </div>
-    <div class="field">
-      <h4>コメント<i class="fa fa-comment"></i></h4>
-    </div>
+      <div class="panel-body">
+        <ul class="chat">
+          <div id="messages_area">
+            <%= render partial: 'messages/index', locals: { messages: @messages } %>
+          </div>
+        </ul>
+      </div>
 
-    <div id="messages_area">
-      <%= render partial: 'messages/index', locals: { messages: @messages } %>
-    </div>
+      <div class="comment-create">
+        <%= render partial: 'messages/form', locals: { message: @message, group: @group } %>
+      </div>
 
     <% end %>
-
+  </div>
 </div>

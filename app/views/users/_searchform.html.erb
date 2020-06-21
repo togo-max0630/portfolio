@@ -1,12 +1,6 @@
 <%= search_form_for @q, url: users_path do |f| %>
-  <%= f.label :nickname, "ニックネーム" %>
-  <%= f.search_field :nickname_cont %>
-  <%= f.label :category, "業界" %>
-  <%= f.search_field :category_cont %>
-  <%= f.select :category, User.categories.keys, prompt: "-- 選択してください --", class: "col-sm-4" %>
-  <%= f.label :sub_category, "職種" %>
-  <%= f.select :sub_category, User.sub_categories.keys, prompt: "-- 選択してください --", class: "col-sm-4" %>
-  
+  <%= f.label :nickname, "ニックネーム:" %>
+  <%= f.search_field :nickname_cont %>  
   <%= f.submit "検索" %>
 <% end %>
 

@@ -10,7 +10,11 @@
         <%= link_to 'お問い合わせ', new_contact_path %>
       </li>
       <li>
-        <%= link_to '通知メール一覧', letter_opener_web_path %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to '通知メール一覧', letter_opener_web_path %>
+          <% end %>
+        <% end %>
       </li>
     </ul>
   </nav>
