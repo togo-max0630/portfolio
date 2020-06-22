@@ -8,7 +8,7 @@
 
       <li>
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-        <%= link_to 'マイページ', user_path(current_user.id) %>
+        <%= link_to 'マイページ', user_path(current_user.id), data: {"turbolinks"=>false} %>
       </li>
       <li>
         <span class="fa fa-users "></span> 

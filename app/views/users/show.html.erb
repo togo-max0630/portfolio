@@ -1,4 +1,4 @@
-<h2>マイページ</h2>
+<h2 class="head-line title_h2 text-center">マイページ</h2>
 <div class="flip">
   <div class="card"> 
     <div class="face front"> 
@@ -38,20 +38,20 @@
       <div class="social">
         <table>
           <tr>
-            <td><p>フォロー</p></td>
-            <td id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id), class: "btn  btn-success" %></td>
+            <td id='following-count_<%= @user.id %>}'><%= link_to "フォロー" ,users_following_path(@user.id), class: "btn-lg  btn-warning" %></td>
+            <td id= 'follower-count_<%= @user.id %>'><%= link_to "フォロワー", users_follower_path(@user.id), class: "btn-lg btn-warning" %></td>
           </tr>
           <tr>
-            <td>フォロワー</td>
-            <td id= 'follower-count_<%= @user.id %>'><%= link_to "#{@user.followed.count}", users_follower_path(@user.id), class: "btn btn-success" %></td>
+            <td id='following-count_<%= @user.id %>}'><%= link_to "#{@user.follower.count}" ,users_following_path(@user.id), class: "btn-lg  btn-info" %></td>     
+            <td id= 'follower-count_<%= @user.id %>'><%= link_to "#{@user.followed.count}", users_follower_path(@user.id), class: "btn-lg btn-info" %></td>
           </tr>
           <tr>
             <td>
-              <%= link_to "戻る", users_path, class: "btn btn-primary" %>
+              <%= link_to "戻る", users_path, class: "btn-lg btn-success" %>
             </td>   
             <td>
               <% if @user.id == current_user.id %>
-                <%= link_to "編集", edit_user_path(@user.id), class: "btn btn-success" %>
+                <%= link_to "編集", edit_user_path(@user.id), class: "btn-lg btn-success" %>
               <% end %>
             </td>
           </tr>
