@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
   # user_adminしか見ることができない
   before_action :user_admin, only: [:index]
-  
+
   def index
     @category = Category.new
     @categories = Category.all
@@ -10,7 +12,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "カテゴリー作成したよ"
+      flash[:notice] = 'カテゴリー作成したよ'
       redirect_to categories_path
     else
       @categories = Category.all
@@ -21,7 +23,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    flash[:notice] = "カテゴリー削除したよ"
+    flash[:notice] = 'カテゴリー削除したよ'
     render 'index'
   end
 
@@ -38,9 +40,7 @@ class CategoriesController < ApplicationController
     if current_user.admin == false
       redirect_to root_path
     else
-      render action: "index"
+      render action: 'index'
     end
   end
-
-
 end

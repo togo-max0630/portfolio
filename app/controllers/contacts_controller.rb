@@ -1,26 +1,26 @@
+# frozen_string_literal: true
+
 class ContactsController < ApplicationController
-  #Scaffoldで一括ジェネレートにて作成
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  # Scaffoldで一括ジェネレートにて作成
+  before_action :set_contact, only: %i[show edit update destroy]
 
   def index
     @contacts = Contact.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @contact = Contact.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver
-      redirect_to contacts_path,notice: 'お問い合わせメールを送信したよ'
+      redirect_to contacts_path, notice: 'お問い合わせメールを送信したよ'
     end
   end
 
@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @contact.destroy
     respond_to do |format|
@@ -45,13 +45,14 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def contact_params
-      params.require(:contact).permit(:name, :email, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def contact_params
+    params.require(:contact).permit(:name, :email, :content)
+  end
 end

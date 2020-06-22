@@ -346,7 +346,9 @@ DEPENDENCIES
   ransack
   refile!
   refile-mini_magick
+  rubocop
   rubocop-airbnb
+  rubocop-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

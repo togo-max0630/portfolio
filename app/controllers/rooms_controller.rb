@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoomsController < ApplicationController
   before_action :authenticate_user!
 
@@ -16,7 +18,7 @@ class RoomsController < ApplicationController
     # Entriesテーブルに、
     # 現在ログインしているユーザーのidとそれにひもづいたチャットルームのidをwhereメソッドで探し、
     # そのレコードがあるか確認します。
-    if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
+    if Entry.where(user_id: current_user.id, room_id: @room.id).present?
       @chats = @room.chats
       @chat = Chat.new
       @entries = @room.entries
@@ -25,4 +27,3 @@ class RoomsController < ApplicationController
     end
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RerationshipsController < ApplicationController
   before_action :authenticate_user!
 
@@ -5,7 +7,6 @@ class RerationshipsController < ApplicationController
     current_user.follow(params[:id])
     @user = User.find(params[:id])
     render 'users/follow'
-
   end
 
   def unfollow
@@ -14,7 +15,7 @@ class RerationshipsController < ApplicationController
     render 'users/unfollow'
   end
 
-    # 自分がフォローしているユーザー一覧
+  # 自分がフォローしているユーザー一覧
   def following
     @user = current_user
     @users = User.all
@@ -25,6 +26,4 @@ class RerationshipsController < ApplicationController
     @user = current_user
     @users = User.all
   end
-
-  
 end

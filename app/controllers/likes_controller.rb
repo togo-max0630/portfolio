@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :set_post
 
@@ -19,5 +21,4 @@ class LikesController < ApplicationController
   def set_post
     @post = Post.find(params[:post_id])
   end
-
 end

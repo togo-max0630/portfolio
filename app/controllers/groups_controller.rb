@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   before_action :authenticate_user!
 
@@ -18,7 +20,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.user_id = current_user.id
     if @group.save
-      flash[:notice] = "新規グループ作成したよ"
+      flash[:notice] = '新規グループ作成したよ'
       redirect_to groups_path
     else
       @q = Group.ransack(params[:q])
@@ -30,11 +32,12 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    flash[:notice] = "グループ削除したよ"
+    flash[:notice] = 'グループ削除したよ'
     redirect_to groups_path
   end
 
   private
+
   def group_params
     params.require(:group).permit(:name, :user_id)
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SubCategoriesController < ApplicationController
   # user_adminしか見ることができない
   before_action :user_admin, only: [:index]
@@ -10,7 +12,7 @@ class SubCategoriesController < ApplicationController
   def create
     @sub_category = SubCategory.new(sub_category_params)
     if @sub_category.save
-      flash[:notice] = "サブカテゴリー作成したよ"
+      flash[:notice] = 'サブカテゴリー作成したよ'
       redirect_to sub_categories_path
     else
       @sub_categories = SubCategory.all
@@ -21,7 +23,7 @@ class SubCategoriesController < ApplicationController
   def destroy
     @sub_category = SubCategory.find(params[:id])
     @sub_category.destroy
-    flash[:notice] = "メッセージ削除したよ"
+    flash[:notice] = 'メッセージ削除したよ'
     render 'index'
   end
 
@@ -38,7 +40,7 @@ class SubCategoriesController < ApplicationController
     if current_user.admin == false
       redirect_to root_path
     else
-      render action: "index"
+      render action: 'index'
     end
   end
 end

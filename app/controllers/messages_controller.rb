@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
@@ -9,18 +11,16 @@ class MessagesController < ApplicationController
     @message.save
     render 'index'
   end
-  
+
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
     render 'index'
   end
-  
-  
+
   private
 
   def message_params
     params.require(:message).permit(:content, :group_id, :user_id)
   end
-
 end
