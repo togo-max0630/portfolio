@@ -53,6 +53,22 @@
               <% if @user.id == current_user.id %>
                 <%= link_to "編集", edit_user_path(@user.id), class: "btn-lg btn-success" %>
               <% end %>
+
+              <% if @user.id == current_user.id %>
+              <% else %>
+                <!-- すでにチャットルームが作成されているかされていないかの条件分岐 -->
+                <% if @isRoom == true %>
+                  <%= link_to "チャットへ", room_path(@roomId), class: "btn-lg btn-success" %>
+                <% else %>
+                  <%= form_for @room do |f| %>
+                     <!-- Entriesテーブルのレコードにはuser_idを送る必要があるため -->
+                    <%= fields_for @entry do |e| %>
+                      <%= e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                  <%= f.submit "チャットを始める", class: "btn-lg btn-success" %>
+                  <% end %>
+                <% end %>
+              <% end %>
             </td>
           </tr>
         </table>

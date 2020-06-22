@@ -1,6 +1,6 @@
 <%= search_form_for @q, url: users_path do |f| %>
   <%= f.label :nickname, "ニックネーム:" %>
-  <%= f.search_field :nickname_cont %>  
+  <%= f.search_field :nickname_cont, placeholder: "キーワードを入力してください", size: "50"  %>  
   <%= f.submit "検索" %>
 <% end %>
 
