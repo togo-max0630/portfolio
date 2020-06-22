@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       patch 'out'
     end
   end
+  resources :chats, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
 
   post 'follow/:id' => 'rerationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'rerationships#unfollow', as: 'unfollow' # フォロー外す

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :chats, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   has_many :follower, class_name: "Rerationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followed, class_name: "Rerationship", foreign_key: "followed_id", dependent: :destroy

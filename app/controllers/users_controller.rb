@@ -9,8 +9,31 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+    # #roomがcreateされた時、現在ログインしているユーザーと「チャットへ」を
+    # 押されたユーザーの両方をEntriesテーブルに記録するため、whereメソッドでそのユーザーを探している
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
+    ログインしているユーザーかどうかわけ、roomsが作成されている場合とで条件分岐させてる。
+    if @user.id == current_user.id
+    else
+      # @currentUserEntryと@userEntryを一つずつ取り出し、Entries内にあるroom_idが共通しているユーザー同士に
+      # @roomId= cu.room_idという変数を指定する
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      if @isRoom
+      else
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
 	end
-
+  
 	def edit
 		if params[:id].to_i == current_user.id
        @user = User.find(params[:id])
