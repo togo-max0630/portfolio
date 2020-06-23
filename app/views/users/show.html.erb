@@ -76,19 +76,5 @@
     </div>       
   </div> 
 </div> 
-<!-- DM機能試作 -->
-<% if @user.id == current_user.id %>
-<% else %>
-  <!-- すでにチャットルームが作成されているかされていないかの条件分岐 -->
-  <% if @isRoom == true %>
-    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
-  <% else %>
-    <%= form_for @room do |f| %>
-      <!-- Entriesテーブルのレコードにはuser_idを送る必要があるため -->
-      <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, value: @user.id %>
-      <% end %>
-      <%= f.submit "チャットを始める" %>
-    <% end %>
-  <% end %>
-<% end %>
+
+

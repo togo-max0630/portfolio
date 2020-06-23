@@ -16,3 +16,30 @@
   font-family: "arial black";
   text-align: center;
 }
+
+.c{
+  height: 500px;
+  width :100%;
+}
+
+.slick-dots{
+  li{
+    font-size: 20px !important;
+    button:before{
+      content: "⭐︎" !important;
+      font-size: 14px !important;
+      color: rgb(60,60,60) !important;
+    }
+  }
+}
+
+.b {
+  position: relative;
+}
+
+.b p{
+    position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: 0;
+  left: 0;
+}

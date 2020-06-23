@@ -10,7 +10,8 @@ class RoomsController < ApplicationController
     @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
     # 相手側の情報
     @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(room_id: @room.id))
-    redirect_to "/romms/#{@room.id}"
+    # 上記をクリエイトして飛ぶ
+    redirect_to room_path(@room.id)
   end
 
   def show
@@ -23,6 +24,7 @@ class RoomsController < ApplicationController
       @chat = Chat.new
       @entries = @room.entries
     else
+    # なかったら入れません
       redirect_back(fallback_location: root_path)
     end
   end
