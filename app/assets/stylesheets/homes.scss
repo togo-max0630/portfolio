@@ -3,23 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .top {
-  background-image: url(/assets/o0425028312613913455.jpg);
+  background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8)),
+  url(/assets/bg-cherrybrossam.jpg);
+}
+
+.sample {
+  margin-top: 100px;
+  color: white ;
+  font-size: 40px;
+  font-family: "arial black";
+  text-align: center;
+}
+
+
+.about {
+  background-image: url(/assets/watermark.jpg);
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
   background-size: cover;
 }
 
-.sample {
-  margin-top: 80px;
-  color: #00FF7F  ;
-  font-size: 50px;
-  font-family: "arial black";
-  text-align: center;
-}
-
 .c{
   height: 500px;
   width :100%;
+  border-radius: 50%;
 }
 
 .slick-dots{
@@ -38,8 +45,13 @@
 }
 
 .b p{
-    position: absolute;/*絶対配置*/
-  color: white;/*文字は白に*/
-  top: 0;
-  left: 0;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  top: 50%;
+  left: 25%;
+  margin: 0;
+  padding: 0;
 }
+
