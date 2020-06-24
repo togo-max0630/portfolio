@@ -22,6 +22,5 @@
   <%= f.hidden_field :room_id, value: @room.id %>
   <br>
   <%= f.submit "投稿する" %>
+  <%= link_to "戻る", users_path %>
 <% end %>
-
-<%= link_to "戻る", users_path, class: "btn-lg btn-success" %>

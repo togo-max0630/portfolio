@@ -65,11 +65,17 @@
     </div>
 </div>
 
-      <% if user_signed_in? %>
+<div class="comments_form">
+  <% if user_signed_in? %>
 
-      <div class="comment-create">
-        <h3>回答する</h3>
-          <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+  <div class="comment-create">
+    <h3 class="head-line title_h2 text-center">回答する</h3>
+    <hr>
+      <div class="box-2">
+        <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
       </div>
-      <% end %>
+  </div>
+  <% end %>
+</div>
+
 
