@@ -24,7 +24,8 @@ $(function() {
 
 
 //■page topボタン
-$(function(){
+// ターボリンクス関係もある
+$(document).on('turbolinks:load', function(){
 var topBtn=$('#pageTop');
 topBtn.hide();
 

@@ -74,6 +74,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'impressionist', '~>1.6.1'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'rails-i18n'
 gem 'pry-byebug'
 gem 'ransack'
 gem 'rubocop', require: false

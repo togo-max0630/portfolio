@@ -1,3 +1,35 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_show {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 3px black;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0,0,0,.3);
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.box {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.comment_area {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 3px black;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0,0,0,.3);
+  border-radius: 10px;  
+}
+
+.box-1{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;  
+}

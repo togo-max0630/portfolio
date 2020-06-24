@@ -1,5 +1,5 @@
 <nav id="g_navi">
-  <ul>
+  <ul class="g_navi_ul">
     <!-- if文でログイン時と通常時の違いを表示 -->  
     <% if user_signed_in? %>   
     <li>
@@ -21,20 +21,19 @@
     <% else %>
 
     <li>
-      <span class="fas fa-keyboard"></span>
-      <%= link_to 'お悩み一覧', posts_path %>
+      <%= link_to 'お悩み一覧', posts_path, class: "fas fa-keyboard" %>
     </li>
     <li>
-      <span class="fas fa-smile"></span>
-      <%= link_to 'サインアップ', new_user_registration_path, class: '' %>
+      <%= link_to 'チャット一覧', groups_path, class: "fa fa-comments" %>
     </li>
     <li>
-      <span class="fas fa-frown"></span>
-      <%= link_to 'ログイン', new_user_session_path, class: '' %>
+      <%= link_to 'サインイン', new_user_registration_path, class: "fas fa-smile" %>
     </li>
     <li>
-      <span class="fa fa-home "></span> 
-      <%= link_to 'Home', root_path, class: '' %>
+      <%= link_to 'ログイン', new_user_session_path, class: "fas fa-frown" %>
+    </li>
+    <li>
+      <%= link_to 'Home', root_path, class: "fa fa-home" %>
     </li>
     <% end %>
   </ul>

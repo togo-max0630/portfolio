@@ -1,0 +1,9 @@
+config/locales/models/ja.yml
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        title: 投稿タイトル
+        body: 投稿内容

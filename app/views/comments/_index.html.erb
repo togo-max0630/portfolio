@@ -17,5 +17,6 @@
         <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "btn btn-danger" %>
       <% end %>
     </div>
+  <hr>
   <% end %>
 <% end %>
