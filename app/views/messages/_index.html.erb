@@ -17,7 +17,7 @@
       <p>
         <%= message.content %>
         <% if message.user == current_user %>
-          <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "btn-sm btn-danger" %>
+          <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "btn-sm btn-danger pull-right" %>
         <% end %>
       </p>
     </div>

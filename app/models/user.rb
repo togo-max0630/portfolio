@@ -30,7 +30,7 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
-  validates :name, :nickname, :residence, presence: true
+  validates :name, :nickname, :residence, :postal_code, presence: true
   validates :postal_code, length: { is: 7 }, numericality: { only_integer: true }
 
   enum category: { "メーカー": 0, "小売": 1, "サービス": 2, "ソフトウェア・通信": 3, "商社": 4, "金融": 5, "マスコミ": 6, "官公庁・公社・団体": 7 }

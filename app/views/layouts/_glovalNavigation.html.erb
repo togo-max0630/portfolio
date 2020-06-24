@@ -1,3 +1,41 @@
-<div class="col-xs-3">
+<nav id="g_navi">
+  <ul>
+    <!-- if文でログイン時と通常時の違いを表示 -->  
+    <% if user_signed_in? %>   
+    <li>
+        <%= link_to 'マイページ', user_path(current_user.id), data: {"turbolinks"=>false}, class: "fa fa-user-circle"  %>
+    </li>
+    <li>
+      <%= link_to '会員一覧', users_path, class: "fa fa-users" %>
+    </li>
+    <li>
+      <%= link_to 'お悩み一覧', posts_path, class: "fas fa-keyboard" %>
+    </li>
+    <li>
+      <%= link_to 'チャット一覧', groups_path, class: "fa fa-comments" %>
+    </li>
+    <li>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fa fa-power-off" %>
+    </li>
 
-</div>
+    <% else %>
+
+    <li>
+      <span class="fas fa-keyboard"></span>
+      <%= link_to 'お悩み一覧', posts_path %>
+    </li>
+    <li>
+      <span class="fas fa-smile"></span>
+      <%= link_to 'サインアップ', new_user_registration_path, class: '' %>
+    </li>
+    <li>
+      <span class="fas fa-frown"></span>
+      <%= link_to 'ログイン', new_user_session_path, class: '' %>
+    </li>
+    <li>
+      <span class="fa fa-home "></span> 
+      <%= link_to 'Home', root_path, class: '' %>
+    </li>
+    <% end %>
+  </ul>
+</nav>

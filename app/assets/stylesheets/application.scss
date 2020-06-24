@@ -58,7 +58,7 @@ body {
 
 header {
   width: 100%;
-  padding: 30px 4% 10px;
+  padding: 20px 4% 10px;
   background-color: #FFFFFF;
   position: fixed;
   top: 0;
@@ -71,7 +71,9 @@ header {
 h1 {
   margin: 0; 
   padding: 0;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #FFB6C1;
 }
 
 a { 
@@ -101,10 +103,37 @@ li {
   background-color: #888;
   color: #fff;
   width: 100%; 
+  position: fixed;
+  z-index: 25;
+}
+
+#g_navi ul {
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 3%;
+  width: 94%;
+  max-width: 960px;
+}
+
+#g_navi ul li {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+}
+
+#g_navi ul li a {
+  padding: 22px 5%;
+  width: 90%;
+  color: #fff;
+}
+
+.row {
+  margin-top: 160px;
 }
 
 .test {
   z-index: 20;
+  top: 100px;
 }
 
 #pageTop {
@@ -146,7 +175,6 @@ li {
   bottom: 0; 
   margin-bottom: 0;
 }
-
 
 
 .wrapper {    
@@ -213,6 +241,7 @@ th{
   background: #10a0e0;
   color: #fff;
 }
+
 
 
 
