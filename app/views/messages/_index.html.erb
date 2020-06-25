@@ -3,8 +3,10 @@
 
 <% messages.each do |message| %>
 <% unless message.id.nil? %>
+<% user = message.user %>
+  <% if current_user == user %>
 
-  <li class="left clearfix">
+  <li class="right clearfix">
     
     <div class="field">
       <span class="chat-img pull-left">
@@ -23,5 +25,25 @@
     </div>
   </li>
 
+  <% else %>
+  <li class="left clearfix">
+    
+    <div class="field">
+      <span class="chat-img pull-left">
+      　　<%= attachment_image_tag(message.user, :profile_image, size: "50x50", class: "img-circle pull-left profile-thumb", fallback: "4dbc7e0f.jpg") %>
+      </span>
+      <strong class="primary-font"><%= message.user.name %></strong>
+    </div>
+
+    <div class="field">
+      <p>
+        <%= message.content %>
+        <% if message.user == current_user %>
+          <%= link_to "削除", group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, remote: true, class: "btn-sm btn-danger pull-right" %>
+        <% end %>
+      </p>
+    </div>
+  </li>
+<% end %>
 <% end %>
 <% end %>
