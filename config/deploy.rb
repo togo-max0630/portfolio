@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "community-app"
+set :application, "portfolio"
 set :repo_url, "git@github.com:togo-max0630/portfolio.git"
 
 set :deploy_to, "/home/ec2-user/portfolio"
