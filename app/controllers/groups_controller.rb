@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show]
 
   def index
     @group = Group.new
