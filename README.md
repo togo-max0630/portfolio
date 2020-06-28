@@ -27,3 +27,6 @@
 自分と同じ業界・職種の人と繋がり会話する。
 ・悩み相談は掲示板の様な機能で相談する事ができる。
 ・グループチャット機能により、愚痴をこぼしたり、共感を得られたりする。
+
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1451iNmN6LkaVnlCE60ed-lrtFTRv3gcCkmQNUwgHSww/edit#gid=0
