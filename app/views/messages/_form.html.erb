@@ -1,7 +1,8 @@
 <div class="panel-footer">
   <div class="form-group">
     <%= form_with(model: [group, message], url: group_messages_path(@group) ) do |f| %>
-      <%= f.text_field :content, size: "100×100", placeholder: "メッセージを入力して下さい", class: "form-control input-sm" %>
+      <%= f.text_area :content, size: "100×50", placeholder: "メッセージを入力して下さい", class: "form-control input-sm" %>
+      <%= f.submit "送信", class: "pull-right" %>
     <% end %>
   </div>
 </div>
