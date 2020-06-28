@@ -10,11 +10,11 @@
       <%= link_to 'About', homes_about_path, data: {"turbolinks"=>false} %>
     </li>
     <li>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%=# link_to '通知メール一覧', letter_opener_web_path %>
-        <% end %>
-      <% end %>
+      <%# if user_signed_in? %>
+        <%# if current_user.admin? %>
+          <%#= link_to '通知メール一覧', letter_opener_web_path %>
+        <%# end %>
+      <%# end %>
     </li>
   </ul>
 </nav>
