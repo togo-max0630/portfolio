@@ -19,7 +19,7 @@
 
 // フラッシュメッセージ
 $(function() {
-    setTimeout("$('#flash').fadeOut('slow')", 2000);
+  setTimeout("$('#flash').fadeOut('slow')", 2000);
 });
 
 
@@ -51,10 +51,9 @@ topBtn.click(function(){
 
 // カードに触るととひっくり返る
 $('.flip').mouseenter(function(){         
-      $(this).find('.card').addClass('flipped').mouseleave(function()
-      {
-         $(this).removeClass('flipped');
-      });
+  $(this).find('.card').addClass('flipped').mouseleave(function(){
+  $(this).removeClass('flipped');
+  });
     
   return false;
 });
